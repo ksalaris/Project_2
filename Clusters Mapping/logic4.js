@@ -44,10 +44,16 @@ var baseMaps = {
     group2 = L.featureGroup.subGroup(markerClusters).addTo(myMap),
     group3 = L.featureGroup.subGroup(markerClusters).addTo(myMap),
     group4 = L.featureGroup.subGroup(markerClusters).addTo(myMap),
+    group5 = L.featureGroup.subGroup(markerClusters).addTo(myMap),
+    group6 = L.featureGroup.subGroup(markerClusters).addTo(myMap),
+    group7 = L.featureGroup.subGroup(markerClusters).addTo(myMap),
     group1a = L.featureGroup(),
     group2a = L.featureGroup(),
     group3a = L.featureGroup(),
     group4a = L.featureGroup(),
+    group5a = L.featureGroup(),
+    group6a = L.featureGroup(),
+    group7a = L.featureGroup(),
     control = L.control.layers(baseMaps, null).addTo(myMap);
     ;
 
@@ -65,10 +71,13 @@ var baseMaps = {
       var m = L.marker([cities[i].BEGIN_LAT, cities[i].BEGIN_LON])
                       .bindPopup( popup );
 
-      m.addTo(cities[i].EVENT_TYPE == "Flash Flood" ? group1a 
-      : cities[i].EVENT_TYPE == "Flood" ? group2a 
-      : cities[i].EVENT_TYPE == "Flash Flood" ? group3a
-      : group4a);
+      m.addTo(cities[i].FLOOD_CAUSE == "Heavy Rain" ? group1a 
+      : cities[i].FLOOD_CAUSE == "Heavy Rain / Snow Melt" ? group2a 
+      : cities[i].FLOOD_CAUSE == "Heavy Rain / Burn Area" ? group3a
+      : cities[i].FLOOD_CAUSE == "Ice Jam" ? group4a
+      : cities[i].FLOOD_CAUSE == "Dam / Levee Break" ? group5a
+      : cities[i].FLOOD_CAUSE == "Planned Dam Release" ? group6a 
+      : group7a);
                     
       // markerClusters.addLayer(m);
       // m.addTo()
@@ -95,11 +104,17 @@ var baseMaps = {
     group2a.addTo(group2);
     group3a.addTo(group3);
     group4a.addTo(group4);
+    group5a.addTo(group5);
+    group6a.addTo(group6);
+    group7a.addTo(group7);
 
-    control.addOverlay(group1, 'Flash Floods');
-    control.addOverlay(group2, 'Floods');
-    control.addOverlay(group3, 'Coastal Floods');
-    control.addOverlay(group4, 'Coastal Floods');
+    control.addOverlay(group1, 'Heavy Rain');
+    control.addOverlay(group2, 'Heavy Rain / Snow Melt');
+    control.addOverlay(group3, 'Heavy Rain / Burn Area');
+    control.addOverlay(group4, 'Ice Jam');
+    control.addOverlay(group5, 'Dam / Levee Break');
+    control.addOverlay(group6, 'Planned Dam Release');
+    control.addOverlay(group7, 'Not Stated');
     control.addTo(myMap);
   
 
