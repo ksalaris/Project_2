@@ -38,7 +38,7 @@ var baseMaps = {
 var myMap = L.map(map, {
     center: [40, -98.5],
     zoom: 4.3,
-    layers: [tiles]
+    layers: [dark]
   });
    
     for ( var i = 0; i < cities.length; ++i )
@@ -61,7 +61,7 @@ var myMap = L.map(map, {
                                       fillOpacity: 0.4,
                                       color: "cyan",
                                       fillColor: "cyan",
-                                      radius: damage/130
+                                      radius: damage/100
                                     //   markerSize(cities[i].DAMAGE_PROPERTY)
                                     }).addTo(myMap).bindPopup( popup );
         };
