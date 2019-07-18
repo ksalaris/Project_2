@@ -61,12 +61,24 @@ var baseMaps = {
 
     for ( var i = 0; i < cities.length; ++i )
     {
-    
+      if (cities[i].DAMAGE_PROPERTY.slice(-1) == "K"){
+        pdamage = cities[i].DAMAGE_PROPERTY.slice(0,-1) * 1000
+      };
+      if (cities[i].DAMAGE_PROPERTY.slice(-1) == "M"){
+        pdamage = cities[i].DAMAGE_PROPERTY.slice(0,-1) * 1000000
+      };
+      if (cities[i].DAMAGE_CROPS.slice(-1) == "K"){
+      cdamage = cities[i].DAMAGE_CROPS.slice(0,-1) * 1000
+      };
+      if (cities[i].DAMAGE_CROPS.slice(-1) == "M"){
+      cdamage = cities[i].DAMAGE_CROPS.slice(0,-1) * 1000000
+      };
       var popup = cities[i].BEGIN_LOCATION +
                   '<br/><b>Date: </b> ' + cities[i].MONTH_NAME + " " + cities[i].BEGIN_DAY + ", " + cities[i].BEGIN_YEAR +
                   '<br/><b>Type: </b> ' + cities[i].EVENT_TYPE +
                   '<br/><b>Cause: </b> ' + cities[i].FLOOD_CAUSE +
-                  '<br/><b>Damage: $</b> ' + cities[i].DAMAGE_PROPERTY;
+                  '<br/><b>Property Damage: $</b>' + pdamage +
+                  '<br/><b>Crop Damage: $</b>' + cdamage;
                 
       var m = L.marker([cities[i].BEGIN_LAT, cities[i].BEGIN_LON])
                       .bindPopup( popup );
