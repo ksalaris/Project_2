@@ -43,28 +43,29 @@ var myMap = L.map(map, {
    
     for ( var i = 0; i < cities.length; ++i )
     {
-        if (cities[i].DAMAGE_PROPERTY.slice(-1) == "K"){
-            damage = cities[i].DAMAGE_PROPERTY.slice(0,-1) * 1000
-        };
-        if (cities[i].DAMAGE_PROPERTY.slice(-1) == "M"){
-            damage = cities[i].DAMAGE_PROPERTY.slice(0,-1) * 1000000
-        };
+        // if (cities[i].DAMAGE_PROPERTY.slice(-1) == "K"){
+        //     damage = cities[i].DAMAGE_PROPERTY.slice(0,-1) * 1000
+        // };
+        // if (cities[i].DAMAGE_PROPERTY.slice(-1) == "M"){
+        //     damage = cities[i].DAMAGE_PROPERTY.slice(0,-1) * 1000000
+        // };
       var popup = cities[i].BEGIN_LOCATION +
                   '<br/><b>Date: </b> ' + cities[i].MONTH_NAME + " " + cities[i].BEGIN_DAY + ", " + cities[i].BEGIN_YEAR +
                   '<br/><b>Type: </b> ' + cities[i].EVENT_TYPE +
-                  '<br/><b>Cause: </b> ' + cities[i].FLOOD_CAUSE +
-                  '<br/><b>Damage: $</b> ' + damage;
+                  '<br/><b>Cause: </b> ' + cities[i].FLOOD_CAUSE ;
+                  // '<br/><b>Damage: $</b> ' + damage;
                 
-        if (damage > 0){
+        // if (damage > 0){
         var m = L.circle([cities[i].BEGIN_LAT, cities[i].BEGIN_LON], {
                                       stroke: false,
                                       fillOpacity: 0.4,
                                       color: "cyan",
                                       fillColor: "cyan",
-                                      radius: damage/130
+                                      // radius: damage/130
+                                      radius: cities[i].LATITUDE*100
                                     //   markerSize(cities[i].DAMAGE_PROPERTY)
                                     }).addTo(myMap).bindPopup( popup );
-        };
+        // };
         // m.addTo(cities[i].EVENT_TYPE == "Flash Flood" ? group1a 
         // : cities[i].EVENT_TYPE == "Flood" ? group2a 
         // : cities[i].EVENT_TYPE == "Coastal Flood" ? group3a
