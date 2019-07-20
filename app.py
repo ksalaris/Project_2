@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect
+from flask import Flask, render_template, redirect,current_app
 from flask_pymongo import PyMongo
 import scrape_flood
 
@@ -21,9 +21,37 @@ def scrape():
     
     return redirect("/", code=302)
 
-@app.route("/plots")
-def plots():
-    
+@app.route("/trends")
+def trends():
+    return render_template("trends.html")
+
+@app.route("/aboutus")
+def aboutus():
+    return render_template("about_us.html")
+
+@app.route("/mapIncidence")
+def mapIncidence():
+    return render_template("incidences_map.html")
+
+@app.route("/fullIncidence")
+def fullIncidence():
+    return render_template("fullmap_incidences.html")
+
+@app.route("/mapDamage")
+def mapDamage():
+    return render_template("damage_map.html")
+
+@app.route("/fullDamage")
+def fullDamage():
+    return render_template("fullmap_damage.html")
+
+@app.route("/data2019")
+def data2019():
+    return render_template("floodData2019.html")
+
+@app.route("/dataHistorical")
+def dataHistorical():
+    return render_template("floodsummary.html")
 
 if __name__ == "__main__": 
     app.run(debug= True)

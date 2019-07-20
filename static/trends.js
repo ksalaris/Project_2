@@ -11,7 +11,7 @@ var flood_count = {
   
   // Defining Layout
   var layout1 = {
-    title: "Flood count from 1999 to 2019",
+    title: "Flood count from 1999 to 2018",
     xaxis:{title:'Year'},
     yaxis:{title:'Occurence'}
   };
@@ -26,7 +26,7 @@ var flood_count = {
   };
   var flood_cropDamage = {
     x: flood.map(row => row.BEGIN_YEAR),
-    y: flood.map(row => row.DAMAGE_CROPS/1000),
+    y: flood.map(row => row.DAMAGE_CROPS),
     name: "Crop Damage",
     mode: 'lines+markers',
     type: 'scatter'
@@ -36,7 +36,7 @@ var flood_count = {
   
    // Defining Layout
    var layout2 = {
-     title: "Flood Damages from 1999 to 2019",
+     title: "Flood Damages from 1999 to 2018",
      xaxis:{title:'Year'},
      yaxis:{title:'Damage in Dollars'},
      height: 600
@@ -62,7 +62,7 @@ var flood_count = {
   
    // Defining Layout
    var layout3 = {
-     title: "Flood Damages from 1999 to 2019",
+     title: "Flood Deaths and Injuries from 1999 to 2018",
      xaxis:{title:'Year'},
      yaxis:{title:'Count'},
      height: 500
