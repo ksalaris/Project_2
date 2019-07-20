@@ -35,49 +35,55 @@
     <!--Nav Bar -->
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="index.html">Flooding & Flash Flooding in the US</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
+        <a class="navbar-brand" href="index.html">Flooding & Flash Flooding in the US</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarColor02">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Overview <span class="sr-only">(current)</span></a>
+            </li>
+            <li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Maps
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <a class="dropdown-item" href="incidences_map.html">Incidences</a>
+                      <a class="dropdown-item" href="prop_damage_map.html">Property Damage</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Data
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <a class="dropdown-item" href="FloodData2019.html">2019 Data</a>
+                      <a class="dropdown-item" href="FloodSummary.html">Historical Data</a>
+                    </div>
+                </li>
+            </li>
+            <li>
+                <li class="nav-item text">
+                    <a class="nav-link" href="trends.html" role="button">
+                      Plots
+                    </a>
+                  </li>
+            </li>
           
-            <div class="collapse navbar-collapse" id="navbarColor02">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="index.html">Overview <span class="sr-only">(current)</span></a>
-                </li>
-                <li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Maps
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                          <a class="dropdown-item" href="incidences_map.html">Incidences</a>
-                          <a class="dropdown-item" href="prop_damage_map.html">Property Damage</a>
-                        </div>
-                    </li>
-                </li>
-                <li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link" href="trends.html" role="button">
-                          Plots
-                        </a>
-                    </li>
-                </li>
-              
-              </ul>
-              
-    
-                <span class="navbar-text">
-                  <a class="nav-link" href="about_us.html"> About Us </a>
-                </span>
-            </div>
+          </ul>
+          <span class="navbar-text">
+              <a class="nav-link" href="about_us.html"> About Us </a>
+          </span>
+        </div>
     </nav>
 <!-- Insert map -->
-        <div id="map"></div>
-        <script type="text/javascript" src="cities.js"></script>
-        <script type="text/javascript" src="config.js"></script>
-        <script type="text/javascript" src="logic3.js"></script>
-    </div>
+<div class = container>
+    <img style=" width: 100%; display: block;" src="incidences.png" alt="Card image" href="fullmap_incidences.html">
+
+</div>
 
 
 </body>
