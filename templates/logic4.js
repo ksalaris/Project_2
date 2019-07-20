@@ -44,10 +44,16 @@ var baseMaps = {
     group2 = L.featureGroup.subGroup(markerClusters).addTo(myMap),
     group3 = L.featureGroup.subGroup(markerClusters).addTo(myMap),
     group4 = L.featureGroup.subGroup(markerClusters).addTo(myMap),
+    group5 = L.featureGroup.subGroup(markerClusters).addTo(myMap),
+    group6 = L.featureGroup.subGroup(markerClusters).addTo(myMap),
+    group7 = L.featureGroup.subGroup(markerClusters).addTo(myMap),
     group1a = L.featureGroup(),
     group2a = L.featureGroup(),
     group3a = L.featureGroup(),
     group4a = L.featureGroup(),
+    group5a = L.featureGroup(),
+    group6a = L.featureGroup(),
+    group7a = L.featureGroup(),
     control = L.control.layers(baseMaps, null).addTo(myMap);
     ;
 
@@ -55,20 +61,35 @@ var baseMaps = {
 
     for ( var i = 0; i < cities.length; ++i )
     {
-    
+      if (cities[i].DAMAGE_PROPERTY.slice(-1) == "K"){
+        pdamage = cities[i].DAMAGE_PROPERTY.slice(0,-1) * 1000
+      };
+      if (cities[i].DAMAGE_PROPERTY.slice(-1) == "M"){
+        pdamage = cities[i].DAMAGE_PROPERTY.slice(0,-1) * 1000000
+      };
+      if (cities[i].DAMAGE_CROPS.slice(-1) == "K"){
+      cdamage = cities[i].DAMAGE_CROPS.slice(0,-1) * 1000
+      };
+      if (cities[i].DAMAGE_CROPS.slice(-1) == "M"){
+      cdamage = cities[i].DAMAGE_CROPS.slice(0,-1) * 1000000
+      };
       var popup = cities[i].BEGIN_LOCATION +
                   '<br/><b>Date: </b> ' + cities[i].MONTH_NAME + " " + cities[i].BEGIN_DAY + ", " + cities[i].BEGIN_YEAR +
                   '<br/><b>Type: </b> ' + cities[i].EVENT_TYPE +
                   '<br/><b>Cause: </b> ' + cities[i].FLOOD_CAUSE +
-                  '<br/><b>Damage: $</b> ' + cities[i].DAMAGE_PROPERTY;
+                  '<br/><b>Property Damage: $</b>' + pdamage +
+                  '<br/><b>Crop Damage: $</b>' + cdamage;
                 
       var m = L.marker([cities[i].BEGIN_LAT, cities[i].BEGIN_LON])
                       .bindPopup( popup );
 
-      m.addTo(cities[i].EVENT_TYPE == "Flash Flood" ? group1a 
-      : cities[i].EVENT_TYPE == "Flood" ? group2a 
-      : cities[i].EVENT_TYPE == "Flash Flood" ? group3a
-      : group4a);
+      m.addTo(cities[i].FLOOD_CAUSE == "Heavy Rain" ? group1a 
+      : cities[i].FLOOD_CAUSE == "Heavy Rain / Snow Melt" ? group2a 
+      : cities[i].FLOOD_CAUSE == "Heavy Rain / Burn Area" ? group3a
+      : cities[i].FLOOD_CAUSE == "Ice Jam" ? group4a
+      : cities[i].FLOOD_CAUSE == "Dam / Levee Break" ? group5a
+      : cities[i].FLOOD_CAUSE == "Planned Dam Release" ? group6a 
+      : group7a);
                     
       // markerClusters.addLayer(m);
       // m.addTo()
@@ -95,11 +116,17 @@ var baseMaps = {
     group2a.addTo(group2);
     group3a.addTo(group3);
     group4a.addTo(group4);
+    group5a.addTo(group5);
+    group6a.addTo(group6);
+    group7a.addTo(group7);
 
-    control.addOverlay(group1, 'Flash Floods');
-    control.addOverlay(group2, 'Floods');
-    control.addOverlay(group3, 'Coastal Floods');
-    control.addOverlay(group4, 'Coastal Floods');
+    control.addOverlay(group1, 'Heavy Rain');
+    control.addOverlay(group2, 'Heavy Rain / Snow Melt');
+    control.addOverlay(group3, 'Heavy Rain / Burn Area');
+    control.addOverlay(group4, 'Ice Jam');
+    control.addOverlay(group5, 'Dam / Levee Break');
+    control.addOverlay(group6, 'Planned Dam Release');
+    control.addOverlay(group7, 'Not Stated');
     control.addTo(myMap);
   
 
