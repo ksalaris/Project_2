@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="UTF-8">
+   <!-- Our CSS -->
+   <script type="text/javascript" src="https://cdn.plot.ly/plotly-latest.min.js"></script> 
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  
+   <title>Trends in Floods in US</title>
+</head>
+<body>
+  <!--Nav Bar -->
+  <!-- Nav title -->
+  <nav class="navbar navbar-expand-lg" style="background: #04519b; color: white" >
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/" style="color: white">Flooding & Flash Flooding in the US</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#dropdownoptions"
+       aria-controls="dropdownoptions" aria-expanded="true" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>  
+    <!-- Nav options -->
+    <div class="collapse navbar-collapse" id="dropdownoptions">
+      <ul class="navbar-nav" style="white-space:nowrap">
+          <!-- Over view -->
+          <li class="nav-item active"><a class="nav-link" href="/" style="color: white"> Overview </a></li>
+          <!-- plots -->
+          <li class="nav-item active"><a class="nav-link" href="/trends" style="color: white"> Plots </a></li>
+          <!-- Maps -->
+          <li class="nav-item dropdown active">
+            <a style="color: white" class="nav-link dropdown-toggle" href="#" id="dropdownoptions" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Maps
+              <span class="caret"></span>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownoptions">
+              <a class="dropdown-item" href="/mapIncidence">Incidences</a>
+              <a class="dropdown-item" href="/mapDamage">Damage</a>
+            </div>
+          </li>
+          <!-- Maps -->
+          <li class="nav-item dropdown active">
+              <a style="color: white" class="nav-link dropdown-toggle" href="#" id="dropdownoptions" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Data
+                <span class="caret"></span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="dropdownoptions">
+                <a class="dropdown-item" href="/data2019">2019 Data</a>
+                <a class="dropdown-item" href="/dataHistorical">Historical Data</a>
+              </div>
+            </li>
+          <li class="nav-item active"><a class="nav-link" href="/aboutus" style="color: white">About Us</a></li>
+      </ul>
+    <!-- End of options -->
+    </div>
+  <!-- End of nav -->
+  </nav>
+    <!-- Plots -->
+    <div class="container">
+        <section class="row">
+            <div class="col-md-12">        
+                <div id="plot1"></div>
+            </div>
+        </section>
+        <section class="row">
+            <div class="col-md-12">        
+                <P class="lead">Our analyis determined that flood events have increased over the 
+                  last 20 years. <a href="https://oxfordre.com/naturalhazardscience/abstract/10.1093/acrefore/9780199389407.001.0001/acrefore-9780199389407-e-123">A research</a>
+                  published in the Oxford Research Encyclopidias confirms this trend in the US.
+                  The changes can be attributed to the human-induced climate change as well as 
+                  anthropogenic factors, including urbanization and changes in agricultural practices.</P>
+            </div>
+        </section>
+    </div>
+    <div class="container">
+            <section class="row">
+                <div class="col-md-12">        
+                    <div id="plot2"></div>
+                </div>
+            </section>
+            <section class="row">
+                <div class="col-md-12">        
+                    <P class="lead">There is a general decrease in the damage caused by floods contrary to the trend that was seen in the number of events. 
+                        The first exception in 2003 was due to flooding in Fall River County, Shannon County, and Pennington county caused by heavy rain.
+                        The second exception is 2006 due to the Mid-Atlantic flood which affected much of he mid-Atlantic region of the eastern coast of United States.
+                    </p>
+                    <p class="lead">The decrease after the 2006 event can be attributed to extensive efforts by FEMA and other organizations to reduce economic losses and threats to public health and safety from flooding.
+                        Organizations have also made strides in preservation and restoration of the natural and beneficial functions and resources within floodpains. 
+                        <a href="https://training.fema.gov/hiedu/docs/fmc/chapter%207%20-%20flood%20damage%20reduction%20strategies%20and%20tools.pdf">
+                        A pulication</a> by FEMA outlines the strategies and tools implemented. In addition, the 2008 recession resultd in lower property values.  
+                    </P>
+                </div>
+            </section>
+    </div>
+    <div class="container">
+            <section class="row">
+                <div class="col-md-12 ">        
+                    <div id="plot3"></div>
+                </div>
+            </section>
+            <section class="row">
+                <div class="col-md-12">        
+                    <P class="lead">There is a general decrease in injury caused by floods similar to the trend in damages. 
+                       The 2009 spike was becasue of the Las Vegas flooding when billions of gallons of rain fell over the valley. 
+                       The spike in 2001 is caused by tropical storm Allison that devastated southeast texas in June of 2001. 
+                       The 2010 Tennessee floods that were the result of torrential rains caused another spike in the number of injuries. 
+                    </P>
+                    <p class="lead">
+                      On the other hand, the number deaths caused by flood events in the last 20 years have stayed consistent with a few exceptions.
+                      The spike seen in 2011 can be attributed to hurricane Irene, tropical storm Lee, and other spring storms that devastated the US. 
+                      The summer central floods (repeated high intensity storms in Texas), Autumn Appalachian Floods, hurricane Joaquin, and the winter floods 
+                      resulted in a spike in the death roll in 2015. 
+                    </p>
+                    <p class="lead">
+                      <strong>WHAT NEXT? </strong>The increase in the number flood events in the US is not only affecting the communities impacted but resulting in increased bill for the American Tax payer.
+                      As a country, we need to evaluate what actions we are taking to manage the risk. This can mean changing policies and laws to align better with our changing climate,
+                      reforming FEMA, and research to accurately map flood risk areas.     
+                    </p>
+                </div>
+            </section>
+    </div>
+  <script type="text/javascript" src="{{url_for('static', filename='data.js')}}"></script>
+  <script type="text/javascript" src="{{url_for('static', filename='trends.js')}}"></script>
+  <!-- Adding Footer -->
+  <footer class="footer" style="background:#04519b; color: white; text-align: center; position: sticky; width: 100%" >
+    <div class="container">
+      <span>© Copyright 2019</span>
+    </div>
+      </footer>
+  <!-- Bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

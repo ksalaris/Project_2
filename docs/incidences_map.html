@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="UTF-8">
+   <!-- Our CSS -->
+   <script type="text/javascript" src="https://cdn.plot.ly/plotly-latest.min.js"></script> 
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  
+   <title>Trends in Floods in US</title>
+</head>
+<body>
+  <!--Nav Bar -->
+  <!-- Nav title -->
+  <nav class="navbar navbar-expand-lg" style="background: #04519b;" >
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/" style="color: white">Flooding & Flash Flooding in the US</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#dropdownoptions"
+       aria-controls="dropdownoptions" aria-expanded="true" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>  
+    <!-- Nav options -->
+    <div class="collapse navbar-collapse" id="dropdownoptions">
+      <ul class="navbar-nav" style="white-space:nowrap">
+          <!-- Over view -->
+          <li class="nav-item active"><a class="nav-link" href="/" style="color: white"> Overview </a></li>
+          <!-- plots -->
+          <li class="nav-item active"><a class="nav-link" href="/trends" style="color: white"> Plots </a></li>
+          <!-- Maps -->
+          <li class="nav-item dropdown active">
+            <a style="color: white" class="nav-link dropdown-toggle" href="#" id="dropdownoptions" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Maps
+              <span class="caret"></span>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownoptions">
+              <a class="dropdown-item" href="/mapIncidence">Incidences</a>
+              <a class="dropdown-item" href="/mapDamage">Damage</a>
+            </div>
+          </li>
+          <!-- Maps -->
+          <li class="nav-item dropdown active">
+              <a style="color: white" class="nav-link dropdown-toggle" href="#" id="dropdownoptions" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Data
+                <span class="caret"></span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="dropdownoptions">
+                <a class="dropdown-item" href="/data2019">2019 Data</a>
+                <a class="dropdown-item" href="/dataHistorical">Historical Data</a>
+              </div>
+            </li>
+          <li class="nav-item active"><a class="nav-link" href="/aboutus" style="color: white; padding-right: 50px ">About Us</a></li>
+      </ul>
+    <!-- End of options -->
+    </div>
+  <!-- End of nav -->
+  </nav>
+
+<!-- Insert map -->
+<br>
+<div class = container>
+    <div><a href="/fullIncidence">
+      <img style=" width: 100%; display: block;" src="{{url_for('static', filename='incidences.png')}}" alt="Map of flooding incidents by cause 2019 YTD" >
+    </a>
+    </div>
+  <br>
+    <p> This map shows floods and flash floods to date in 2019, with the ability to filter by cause. Click the map above to view the full interactive map.</p>
+</div>
+<!-- Add footer -->
+<footer class="footer" style="background:#04519b; color: white; text-align: center; position: sticky; width: 100%" >
+  <div class="container">
+      <span>© Copyright 2019</span>
+  </div>
+</footer>
+<!-- Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+</body>
+</html>
