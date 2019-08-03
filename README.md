@@ -1,2 +1,2 @@
 
-### project is deployed here: https://rsimon5.github.io/FloodEvents/
+### Project is deployed on heroku here: https://flooding-us.herokuapp.com/
